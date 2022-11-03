@@ -77,8 +77,8 @@ class FactoryEnv(gym.Env):
         for m in self.machines:
             self.machines_names.append(f"m{m.id}")
             self.allMachines_steps[m.id] = []
-        self.fig, self.gnt = plt.subplots()
-        self.colors_states = ['#2dca1cff', '#a50000ff', '#00b3dacc', '#9927f599','#27eaf5ff', '#ff5bf0cc', '#c65900ff', '#aef527cc', '#6d0000ff']
+        #self.fig, self.gnt = plt.subplots()
+        #self.colors_states = ['#2dca1cff', '#a50000ff', '#00b3dacc', '#9927f599','#27eaf5ff', '#ff5bf0cc', '#c65900ff', '#aef527cc', '#6d0000ff']
 
 
 
