@@ -14,8 +14,8 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 class FactoryEnv(gym.Env):
     metadata = {"render.modes": ["human", "rgb_array"], "video.frames_per_second": 2}
-    def __init__(self, config):
-        f = open("./Config/env.json")
+    def __init__(self, path_config, config):
+        f = open(path_config)
         x = json.load(f)
         fail_dist = [tuple(i) for i in x[config]["fail_dist"]]
         machines = [Machine(idx=i, failure_dist=fail_dist) for i in range(x[config]["number_machines"])]
