@@ -140,32 +140,32 @@ class FactoryEnv(gym.Env):
         return obs, rew, done, {}
 
     def render(self, mode="human"):
-        self.initGantt()
-        for i, m in enumerate(self.machines):
-            s = 0
-            steps = []
-            colors = []
-            colorsState = []
-            for h in m.history:
-                steps.append((s, 1))
-                s += 1
-                colors.append(self.colors_states[h+2])
-                if h >= 0:
-                    colorsState.append("#ffc700ff")
-                else:
-                    colorsState.append(self.colors_states[h+2])
-            self.gnt.broken_barh(steps, ((i + 1) * 10, 9), facecolors=tuple(colorsState))
-            self.gnt.broken_barh(steps, ((i + 1) * 10 + 4, 2), facecolors=tuple(colors))
-
-        if mode == "human":
-            plt.show()
-            #self.fig.canvas.draw()
-        if mode == "rgb_array":
-            #plt.show()
-            self.fig.canvas.draw()
-            data = np.frombuffer(self.fig.canvas.tostring_rgb(), dtype=np.uint8)
-            data = data.reshape(self.fig.canvas.get_width_height()[::-1] + (3,))
-            return data
+        # self.initGantt()
+        # for i, m in enumerate(self.machines):
+        #     s = 0
+        #     steps = []
+        #     colors = []
+        #     colorsState = []
+        #     for h in m.history:
+        #         steps.append((s, 1))
+        #         s += 1
+        #         colors.append(self.colors_states[h+2])
+        #         if h >= 0:
+        #             colorsState.append("#ffc700ff")
+        #         else:
+        #             colorsState.append(self.colors_states[h+2])
+        #     self.gnt.broken_barh(steps, ((i + 1) * 10, 9), facecolors=tuple(colorsState))
+        #     self.gnt.broken_barh(steps, ((i + 1) * 10 + 4, 2), facecolors=tuple(colors))
+        #
+        # if mode == "human":
+        #     plt.show()
+        #     #self.fig.canvas.draw()
+        # if mode == "rgb_array":
+        #     #plt.show()
+        #     self.fig.canvas.draw()
+        #     data = np.frombuffer(self.fig.canvas.tostring_rgb(), dtype=np.uint8)
+        #     data = data.reshape(self.fig.canvas.get_width_height()[::-1] + (3,))
+        #     return data
 
     def close(self):
         #pygame.quit()
