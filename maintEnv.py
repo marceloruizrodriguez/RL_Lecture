@@ -139,7 +139,7 @@ class FactoryEnv(gym.Env):
             done = True
         return obs, rew, done, {}
 
-    def render(self, mode="human"):
+    #def render(self, mode="human"):
         # self.initGantt()
         # for i, m in enumerate(self.machines):
         #     s = 0
