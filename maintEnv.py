@@ -6,11 +6,11 @@ import random
 import json
 from Environment.Technician import Technician
 from Environment.Machine import Machine
-#import pygame
+import pygame
 import matplotlib.pyplot as plt
 import io
-#from pygame import gfxdraw
-os.environ["SDL_VIDEODRIVER"] = "dummy"
+from pygame import gfxdraw
+#os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 class FactoryEnv(gym.Env):
     metadata = {"render.modes": ["human", "rgb_array"], "video.frames_per_second": 2}

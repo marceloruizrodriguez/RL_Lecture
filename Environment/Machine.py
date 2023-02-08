@@ -63,7 +63,6 @@ class Machine:
         self.maintenance_action = action
         self.assignment_success = True
         if action >= 0:
-            #print(action)
             if self.state <= 1 and tech[idx_tech].state:
                 self.state = 2
                 self.tech_assigned = idx_tech
