@@ -5,6 +5,15 @@ from wandb.integration.sb3 import WandbCallback
 
 env = FactoryEnv("./Config/env.json","config_2")
 
+obs = env.reset()
+done = False
+while True:
+    print(obs)
+    action = int(input("A"))
+    obs, rew, done, _ = env.step(action)
+    if done:
+        obs = env.reset()
+
 # config = {
 #     "policy_type": "MlpPolicy",
 #     "total_timesteps": 1000000
